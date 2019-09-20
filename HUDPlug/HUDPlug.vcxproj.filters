@@ -24,16 +24,28 @@
     <ClInclude Include="targetver.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HUD.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="detver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="detours.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="HUDPlug.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="dllmain.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="detours.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="detours.pdb" />
   </ItemGroup>
 </Project>

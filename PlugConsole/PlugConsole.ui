@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlugConsoleClass</class>
+ <widget class="QWidget" name="PlugConsoleClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>572</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>PlugConsole</string>
+  </property>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="PlugConsole.qrc"/>
+ </resources>
+ <connections/>
+ <slots>
+  <slot>buttonDown()</slot>
+ </slots>
+</ui>
