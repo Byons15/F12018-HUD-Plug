@@ -56,6 +56,9 @@
     <ResourceCompile Include="PlugConsole.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="PlugConsole.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_PlugConsole.h">
       <Filter>Header Files</Filter>
     </ClInclude>

@@ -15,7 +15,7 @@ extern "C" {
 
 	// 导出/导入函数声明
 
-DECLSPEC void __stdcall SetHook(DWORD threadId);
+DECLSPEC void __stdcall SetHook(HWND hwnd);
 
 #undef DLL_SAMPLE_API
 

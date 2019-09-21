@@ -31,10 +31,10 @@ public:
         PlugConsoleClass->resize(600, 400);
         pushButton = new QPushButton(PlugConsoleClass);
         pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(250, 170, 75, 23));
+        pushButton->setGeometry(QRect(230, 190, 75, 23));
 
         retranslateUi(PlugConsoleClass);
-        QObject::connect(pushButton, SIGNAL(clicked()), PlugConsoleClass, SLOT(buttonDown()));
+        QObject::connect(pushButton, SIGNAL(clicked()), PlugConsoleClass, SLOT(testButtonCliked()));
 
         QMetaObject::connectSlotsByName(PlugConsoleClass);
     } // setupUi
@@ -42,7 +42,7 @@ public:
     void retranslateUi(QWidget *PlugConsoleClass)
     {
         PlugConsoleClass->setWindowTitle(QApplication::translate("PlugConsoleClass", "PlugConsole", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("PlugConsoleClass", "PushButton", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("PlugConsoleClass", "test", Q_NULLPTR));
     } // retranslateUi
 
 };

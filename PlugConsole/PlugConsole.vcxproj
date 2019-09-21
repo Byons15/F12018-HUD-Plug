@@ -53,7 +53,7 @@
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_CORE_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\GeneratedFiles;.;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include;.\GeneratedFiles\$(ConfigurationName);E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtCore;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtGui;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtANGLE;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtNetwork;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include;.\GeneratedFiles\$(ConfigurationName);E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtCore;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtGui;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtANGLE;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtNetwork;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtWidgets;$(SolutionDir)\HUDPlug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -62,7 +62,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\$(ProjectName).exe</OutputFile>
-      <AdditionalLibraryDirectories>E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\lib;$(SolutionDir)x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\lib\qtmaind.lib;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\lib\Qt5Cored.lib;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\lib\Qt5Guid.lib;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\lib\Qt5Networkd.lib;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\lib\Qt5Widgetsd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -88,7 +88,7 @@
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PreprocessorDefinitions>UNICODE;WIN32;WIN64;QT_DLL;QT_NO_DEBUG;NDEBUG;QT_CORE_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_WIDGETS_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>.\GeneratedFiles;.;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include;.\GeneratedFiles\$(ConfigurationName);E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtCore;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtGui;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtANGLE;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtNetwork;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtWidgets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\GeneratedFiles;.;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include;.\GeneratedFiles\$(ConfigurationName);E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtCore;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtGui;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtANGLE;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtNetwork;E:\Qt\Qt5.8.0_64\5.8\msvc2015_64\include\QtWidgets;$(SolutionDir)\HUDPlug;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat />
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
@@ -126,9 +126,7 @@
     <QtMoc Include="PlugConsole.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="PlugConsole.ui">
-      <SubType>Designer</SubType>
-    </QtUic>
+    <QtUic Include="PlugConsole.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="PlugConsole.qrc" />
@@ -137,7 +135,12 @@
     <ResourceCompile Include="PlugConsole.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GeneratedFiles\ui_PlugConsole.h" />
+    <Image Include="PlugConsole.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_PlugConsole.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
@@ -147,7 +150,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="1" lreleaseOptions="" MocOptions="" />
+      <UserProperties MocDir=".\GeneratedFiles\$(ConfigurationName)" UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" lupdateOptions="" lupdateOnBuild="0" lreleaseOptions="" MocOptions="" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
